@@ -10,7 +10,7 @@ function App() {
         <Route exact path="/">
           <Form/>
         </Route>
-        <Route exact path="/:id">
+        <Route exact path="/sucess/:name">
           <Logado/>
         </Route>
       </Switch>

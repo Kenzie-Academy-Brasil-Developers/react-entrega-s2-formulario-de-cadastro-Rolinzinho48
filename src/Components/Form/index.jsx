@@ -1,4 +1,4 @@
-import {Link}          from 'react-router-dom'
+import {Redirect}          from 'react-router-dom'
 import * as yup        from 'yup';
 import { useForm }     from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -10,13 +10,13 @@ import './style.css'
 function Form(){
 
     const [autorizado,setAutorizado] = useState(false)
+    const [name,setName] = useState()
 
     const formSchema = yup.object({
         name: yup.string().required("Nome obrigatório"),
         email: yup.string().required("Email obrigatório").email("email invalido"),
         password:yup.string().required("Senha obrigatória").min(8, "A senha nao pode ter menos de 8 caracteres"),
         confirmPassword: yup.string().required("Confirmacao de Senha obrigatoria").oneOf([yup.ref('password')], 'Senhas diferentes'),
-
 
     });
     
@@ -27,10 +27,10 @@ function Form(){
  
 
     const onSubmitFunction = (data) => {
-       setAutorizado(true)
-       console.log("SIM")
+       setAutorizado(true);
+       setName(data.name)
     }
-
+    
     return(
         <div>
             <form onSubmit={handleSubmit(onSubmitFunction)}>
@@ -50,8 +50,8 @@ function Form(){
             </form>
             {
                 autorizado&&
-                <Link to={"/:768"}/>
-
+                <Redirect to={"/sucess/:"+name} />
+            
             }
         </div>
     )

@@ -1,9 +1,12 @@
-
+import {useParams} from 'react-router-dom'
 
 function Logado(){
+
+    const {name} = useParams()
+
     return(
         <div>
-            Izaque
+            Bem vindo {name}
         </div>
     )
 }
