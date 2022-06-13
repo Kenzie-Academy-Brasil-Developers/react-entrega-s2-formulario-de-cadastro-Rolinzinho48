@@ -1,12 +1,16 @@
-import {useParams} from 'react-router-dom'
+import {useParams,Link} from 'react-router-dom'
+
+import './style2.css'
 
 function Logado(){
 
     const {name} = useParams()
 
     return(
-        <div>
-            Bem vindo {name}
+        <div className='logado'>
+           <h1>Bem vindo {name.split(":")} </h1>
+           <Link className='link' to={"/"}><button>Voltar</button></Link>
+           
         </div>
     )
 }

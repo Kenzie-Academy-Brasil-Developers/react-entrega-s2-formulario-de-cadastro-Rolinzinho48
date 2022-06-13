@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+}
+.logado{
+    
+    font-size: 20px;
+    margin-top: 15vh;
+    color:white;
+}
+.logado>.link>button{
+    border-style: none;
+    background-color: #FF4655;
+    color: white;
+    width: 170px;
+    height: 8vh;
+}
+.logado>.link>button:hover{
+    
+    background-color: #1D0D0D;
+    transition: all 0.6s;
+    cursor: pointer;
+}

@@ -1,1 +1,27 @@
+body{
+    background-image: url(../../Background.jpg);
+    
+    background-repeat:no-repeat;
+    background-size: 100%;
+    background-position: 0 -20vh;
 
+}
+.form {
+    margin: auto;
+    background-color: white;
+    width: 400px;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    justify-content: center; 
+    gap: 20px;
+    margin-top: 10vh;
+}
+.inputs{
+    width: 80%;
+}
+.btn{
+    width: 50%;
+    height: 8vh;
+}
